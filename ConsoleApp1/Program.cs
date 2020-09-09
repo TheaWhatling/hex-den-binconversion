@@ -6,8 +6,9 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            string num1a, A;
-            int num1b, num1c, num1d, num1e;
+            string num1a;
+            int num1b, num1c;
+            char char1=' ';
 
             Console.WriteLine("Insert a number");
             num1a = Console.ReadLine();
@@ -16,16 +17,22 @@ namespace ConsoleApp1
                 num1b = Convert.ToInt32(num1a);
 
                 num1c = (num1b % 16);
-                if (num1c == 10)
+                if (num1c >= 10)
                 {
-                    num1c = "A";
+                    char1 = Convert.ToChar(Convert.ToInt32('A') + num1c - 10);
+
                 }
-                num1d = (num1b / 16);
-                num1e = num1d && num1c;
-                Console.WriteLine(num1e);
 
+                num1c = (num1b / 16);
+                if (num1c >= 10)
+                {
+                    char1 = Convert.ToChar(Convert.ToInt32('A') + num1c - 10);
 
-            }catch
+                }
+                //Console.WriteLine(Convert.ToString(char1));
+
+            }
+            catch
             {
                 Console.WriteLine("ERROR");
             }
